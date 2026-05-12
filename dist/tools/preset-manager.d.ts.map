@@ -1,0 +1,1 @@
+{"version":3,"file":"preset-manager.d.ts","sourceRoot":"","sources":["../../src/tools/preset-manager.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,qBAAqB,CAAC;AAC1D,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,iBAAiB,CAAC;AAErD;;GAEG;AACH,wBAAgB,mBAAmB,CAAC,IAAI,EAAE,aAAa,EAAE,OAAO,EAAE,MAAM,CAAC,MAAM,EAAE,GAAG,CAAC;;gBAmC5E,cAAc;EAEtB"}

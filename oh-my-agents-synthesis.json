@@ -1,0 +1,129 @@
+{
+  "$schema": "https://unpkg.com/oh-my-agents-synthesis@latest/oh-my-agents.schema.json",
+  "preset": "loom",
+  "presets": {
+    "loom": {
+      "orchestrator": {
+        "model": "opencode/ring-2.6-1t-free",
+        "variant": "max",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "opencode/nemotron-3-super-free",
+        "variant": "max",
+        "skills": ["simplify"],
+        "mcps": []
+      },
+      "council": {
+        "model": "opencode/nemotron-3-super-free",
+        "variant": "max",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "opencode/minimax-m2.5-free",
+        "variant": "medium",
+        "skills": [],
+        "mcps": ["websearch", "context7", "grep_app"]
+      },
+      "explorer": {
+        "model": "opencode/big-pickle",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "opencode/minimax-m2.5-free",
+        "variant": "medium",
+        "skills": ["agent-browser"],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode/deepseek-v4-flash-free",
+        "variant": "max",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode/minimax-m2.5-free",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "openai": {
+      "orchestrator": {
+        "model": "openai/gpt-5.5",
+        "skills": ["*"],
+        "mcps": ["*", "!context7"]
+      },
+      "oracle": {
+        "model": "openai/gpt-5.5",
+        "variant": "high",
+        "skills": ["simplify"],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "low",
+        "skills": [],
+        "mcps": ["websearch", "context7", "grep_app"]
+      },
+      "explorer": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "medium",
+        "skills": ["agent-browser"],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "openai/gpt-5.4-mini",
+        "variant": "low",
+        "skills": [],
+        "mcps": []
+      }
+    }
+  },
+  "disabled_agents": [],
+  "disabled_mcps": [],
+  "disabled_skills": [],
+  "disabled_hooks": [],
+  "council": {
+    "enabled": true,
+    "presets": {
+      "default": {
+        "deepseek": {
+          "model": "opencode/deepseek-v4-flash-free",
+          "variant": "max"
+        },
+        "nemotron": {
+          "model": "opencode/nemotron-3-super-free",
+          "variant": "max"
+        },
+        "minim": {
+          "model": "opencode/minimax-m2.5-free",
+          "variant": "medium"
+        }
+      }
+    }
+  },
+  "fallback": {
+    "enabled": true,
+    "chains": {
+      "orchestrator": ["openai/gpt-5.5"],
+      "fixer": ["openai/gpt-5.4-mini"]
+    }
+  },
+  "multiplexer": {
+    "type": "none",
+    "layout": "main-vertical",
+    "main_pane_size": 60
+  },
+  "env": {
+    "OH_MY_AGENTS_PRESET": "loom"
+  }
+}
